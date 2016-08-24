@@ -1,0 +1,12 @@
+<!-- Start Top News Widget HTML -->
+{if $top neq 0}
+<div class="widget links">
+<h4><b>Categories</b></h4>
+<ul>
+{section name=x loop=$categories}
+<li>
+<a href="./category/{$categories[x].id}/{$categories[x].category|html_decode|slug}"><i class="fa fa-database"></i>{$categories[x].category}</a></li>
+{/section}
+</div>
+{/if}
+<!-- End Top News Widget HTML -->

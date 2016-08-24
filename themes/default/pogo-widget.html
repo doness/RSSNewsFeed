@@ -1,0 +1,13 @@
+<!-- Start Top News Widget HTML -->
+{if $top neq 0}
+<div class="pogo">
+<h4><b>Pokemon GO Server</b></h4>
+<center>
+	<h1><span id="server" class="load"></span></h1>
+	<p id="up" class="serverpara">Pokemon Go servers seem to be <span class="label label-success">Up</span>. If you can't access Pokemon Go, then try restarting the app. <br><br><button class="btn btn-primary refresh"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh Status</button></p>
+	<p id="slow" class="serverpara">Pokemon Go servers seem to be up, but can be <span class="label label-warning">Very Slow</span>. However, it also means that servers will be down temporarily.<br><br><button class="btn btn-primary refresh"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh Status</button></p>
+	<p id="down" class="serverpara">Pokemon Go servers seem to be <span class="label label-danger">Down</span>. We'll have to wait until Niantic fixes their servers.<br><br><button class="btn btn-primary refresh"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh Status</button></p>
+</center>
+</div><br />
+{/if}
+<!-- End Top News Widget HTML -->

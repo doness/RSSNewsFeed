@@ -22,7 +22,7 @@
 </div>
 <div class="col-md-8 col-xs-9">
 <!-- Article Title -->
-<a href="./news/{$news.id}/{$news.title|html_decode|slug}">{$news.title|html_decode}</a>
+<a href="./news/{$news.id}/{$news.title|html_decode|slug}">{$news.title|html_decode}</a> <span class="label label-success">New</span>
 <!-- Article Info (date,category,source,hits) -->
 <div class="article-meta hidden-xs">
 <span><i class="fa fa-clock-o"></i>{$news.datetime|get_since}</span>

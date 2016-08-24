@@ -1,3 +1,208 @@
+<!--
+
+Hello Welcome There
+
+
+-
+-
+-
+-
+-
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+Want To See This??
+
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+
+Try Hard!!
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+
+1 Step Again 
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,25 +229,29 @@
 	<meta property="article:publisher" content="{$general_seo_title}" />		
 	{/if}
 	<!-- CSS Files -->
-    <link rel="stylesheet" href="themes/default/css/bootstrap.min.css">
-	<link rel="stylesheet" href="themes/default/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="themes/default/css/font-awesome.min.css">
-	<link rel="stylesheet" href="themes/default/css/social-buttons.css">
+    <link rel="stylesheet" href="themes/Runsas/css/bootstrap.min.css">
+	<!--link rel="stylesheet" href="themes/Runsas/css/bootstrap-theme.min.css"-->
+	<link rel="stylesheet" href="themes/Runsas/css/font-awesome.min.css">
+	<link rel="stylesheet" href="themes/Runsas/css/social-buttons.css">
 	<link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="themes/default/css/style.css">
+    <link rel="stylesheet" href="themes/Runsas/css/style.css">
+    <link rel="stylesheet" href="themes/Runsas/css/stv/style.css">
+	<link href="themes/Runsas/css/flat-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<!-- Javascript Files -->
-	<script src="themes/default/js/jquery.min.js"></script>
-    <script src="themes/default/js/bootstrap.min.js"></script>
-	<script src="themes/default/js/social-buttons.js"></script>
+	<script src="themes/Runsas/js/jquery.min.js"></script>
+    <script src="themes/Runsas/js/bootstrap.min.js"></script>
+	<script src="themes/Runsas/js/social-buttons.js"></script>
+	<script src="themes/Runsas/js/flat-ui.min.js"></script>
 	{if $theme_allow_lazyload eq 1}
-	<script src="themes/default/js/jquery.lazyloadxt.js"></script>
+	<script src="themes/Runsas/js/jquery.lazyloadxt.js"></script>
 	{/if}
 </head>
 <body>
 <div class="container">
 <!-- Header (logo and header ad) -->
 <div class="header row">
-<div class="col-md-3"><div class="logo"><a href="./"><img src="themes/default/images/logo.png" class="img-responsive" /></a></div></div>
+<div class="col-md-3"><div class="logo"><a href="./"><img src="themes/Runsas/images/logo.png" class="img-responsive" /></a></div></div>
 <div class="col-md-9 header-ad">
 {$header_ad}
 </div>
@@ -54,13 +263,14 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
+                    <!--span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span-->
+					<span class="fa fa-shield"></span>
                 </button>
             </div>
 
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
                 <ul class="nav navbar-nav">
                     <li {if isset($is_home) AND $is_home eq 1}class="active"{/if}><a href="./">Home</a></li>
                     {section name=x loop=$categories}
