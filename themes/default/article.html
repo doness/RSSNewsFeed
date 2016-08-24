@@ -1,0 +1,112 @@
+<!-- Start Article Page HTML -->
+{include file="header.html"}
+<div class="content">
+<div class="row">
+<div class="col-md-8">
+<div class="article-page">
+<!-- Article Title -->
+<h1><a href="./news/{$article_id}/{$article_title|html_decode|slug}">{$article_title|html_decode}</a></h1>
+<!-- Article Info (date,category,source,hits) -->
+<div class="article-meta single-article">
+<span><i class="fa fa-clock-o"></i>{$article_datetime|get_since}</span>
+<span><i class="fa fa-reorder"></i><a href="./category/{$article_category_id}/{$article_category_id|get_category|html_decode|slug}">{$article_category_id|get_category}</a></span>
+<span><i class="fa fa-rss"></i><a href="./source/{$article_source_id}/{$article_source_id|get_source|html_decode|slug}">{$article_source_id|get_source}</a></span>
+<span><i class="fa fa-bar-chart"></i> {$article_hits}</span>
+</div>
+<!-- Article Image -->
+{if !empty($article_thumbnail)}
+<div class="article-image">
+{if $theme_allow_lazyload eq 1}
+<img data-src="./upload/news/{$article_thumbnail}" class="img-responsive max-width" />
+{else}
+<img src="./upload/news/{$article_thumbnail}" class="img-responsive max-width" />
+{/if}
+</div>
+{/if}
+<!-- Article Content -->
+<div class="article-content">
+{if $article_source_id eq 0}
+{$article_details|html_decode|nl2br}
+{else}
+{$article_details|html_decode|strip_tags|nl2br}
+{/if}
+</div>
+<div class="article-share">
+<div class="social-sharing" data-permalink="{$general_siteurl}/news/{$article_id}/{$article_title|html_decode|slug}">
+    <a target="_blank" href="http://www.facebook.com/sharer.php?u={$general_siteurl}/news/{$article_id}/{$article_title|html_decode|slug}" class="share-facebook">
+      <span class="fa fa-facebook" aria-hidden="true"></span>
+      <span class="share-title">Share</span>
+    </a>
+    <a target="_blank" href="http://twitter.com/share?url={$general_siteurl}/news/{$article_id}/{$article_title|html_decode|slug}&amp;text={$article_title|html_decode}" class="share-twitter">
+      <span class="fa fa-twitter" aria-hidden="true"></span>
+      <span class="share-title">Tweet</span>
+    </a>
+	{if !empty($article_thumbnail)}
+    <a target="_blank" href="http://pinterest.com/pin/create/button/?url={$general_siteurl}/news/{$article_id}/{$article_title|html_decode|slug}&amp;media={$general_siteurl}/upload/news/{$article_thumbnail}&amp;description={$article_title|html_decode}" class="share-pinterest">
+      <span class="fa fa-pinterest" aria-hidden="true"></span>
+      <span class="share-title">Pin it</span>
+    </a>
+	{/if}
+    <a target="_blank" href="http://plus.google.com/share?url={$general_siteurl}/news/{$article_id}/{$article_title|html_decode|slug}" class="share-google">
+      <span class="fa fa-google" aria-hidden="true"></span>
+      <span class="share-title">+1</span>
+    </a>
+  </div>
+</div>
+<!-- Start Content Advertisement -->
+{if !empty($content_ad)}
+{$content_ad}
+{/if}
+</div>
+<!-- Article Read The Rest Link -->
+{if $article_source_id neq 0}
+<div class="read-more">
+<a href="{$article_permalink}" target="_NEW" rel="nofollow" class="btn btn-warning btn-lg btn-block">Read The Rest <span class="hidden-xs">at : {$article_source_id|get_source|html_decode}</span></a>
+</div>
+{/if}
+{if $related neq 0}
+<!-- Related News -->
+<div class="related-news">
+<h4>Related News</h4>
+<ul>
+{section name=x loop=$related}
+<li class="col-md-6">
+<!-- Related Article Thumbnail -->
+<div class="col-xs-3">{$related[x].thumbnail|article_thumbnail:$related[x].source_id:false:$theme_allow_lazyload}</div>
+<!-- Related Article Excerpt -->
+<div class="col-xs-9"><a href="./news/{$related[x].id}/{$related[x].title|html_decode|slug}">{$related[x].title|html_decode|truncate:60}</a></div>
+<div class="clear"></div>
+</li>
+{/section}
+</ul>
+<div class="clear"></div>
+</div>
+{/if}
+{if $general_display_disqus_comments eq 1}
+<div id="disqus_thread"></div>
+{literal}
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = '{/literal}{$general_disqus_shortname}{literal}';
+    var disqus_identifier = '{/literal}{$article_id}{literal}';
+    var disqus_title = '{/literal}{$article_title}{literal}';
+    var disqus_url = '{/literal}{$general_siteurl}/news/{$article_id}/{$article_title|html_decode|slug}{literal}';
+	
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+{/literal}
+{/if}
+</div>
+<div class="col-md-4">
+<!-- Include the SideBar -->
+{include file="sidebar.html"}
+</div>
+</div>
+</div>
+{include file="footer.html"}
+<!-- End Article Page HTML -->

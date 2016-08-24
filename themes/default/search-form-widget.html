@@ -1,0 +1,9 @@
+<!-- Search Form Widget -->
+<div class="widget search-form">
+	<form method="GET" action="./search/">
+		<div class="input-group">
+		  <input type="text" name="q" class="form-control" placeholder="Search" {if isset($is_search) AND $is_search eq 1}value="{$q}"{/if} />
+		  <span class="input-group-addon"><button type="submit" class="btn-link"><span class="fa fa-search"></span></button></span>
+		</div>
+	</form>
+</div>

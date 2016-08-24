@@ -1,0 +1,23 @@
+<!-- Start Top News Widget HTML -->
+{if $top neq 0}
+<div class="widget top-hits-news">
+<h4>Top News</h4>
+<ul>
+{section name=x loop=$top}
+<li>
+<div class="col-xs-3">
+<!-- Aticle Thumbnail -->
+{$top[x].thumbnail|article_thumbnail:$top[x].source_id:false:$theme_allow_lazyload} 
+</div>
+<div class="col-xs-9">
+<!-- Aticle Title & Link -->
+<a href="./news/{$top[x].id}/{$top[x].title|html_decode|slug}">{$top[x].title|html_decode}</a>
+<!-- Aticle Excerpt -->
+<p class="visible-sm">{$top[x].details|html_decode|strip_tags|truncate:150}</p>
+</div>
+</li>
+{/section}
+</ul>
+</div>
+{/if}
+<!-- End Top News Widget HTML -->

@@ -1,0 +1,56 @@
+<!-- Start Source Page HTML -->
+{include file="header.html"}
+<div class="content">
+<div class="row">
+<div class="col-md-8">
+<div class="category-page">
+<!-- Source Title -->
+<h1>{$source_title|html_decode}</h1>
+{if $total_records eq 0}
+<div class="alert alert-warning">There are no news in this source right now.</div>
+{else}
+<ul class="category-news">
+<!-- Source News Loop -->
+{section name=x loop=$news}
+<li class="first-section-news">
+<div class="row">
+<div class="col-md-4 col-xs-3">
+<!-- Article Thumbnail -->
+{$news[x].thumbnail|article_thumbnail:$news[x].source_id:"max-width":$theme_allow_lazyload}
+</div>
+<div class="col-md-8 col-xs-9">
+<!-- Article Title -->
+<a href="./news/{$news[x].id}/{$news[x].title|html_decode|slug}">{$news[x].title|html_decode}</a>
+<!-- Article Info (date,category,source,hits) -->
+<div class="article-meta hidden-xs">
+<span><i class="fa fa-clock-o"></i>{$news[x].datetime|get_since}</span>
+<span><i class="fa fa-reorder"></i><a href="./category/{$news[x].category_id}/{$news[x].category_id|get_category|html_decode|slug}">{$news[x].category_id|get_category}</a></span>
+<span><i class="fa fa-rss"></i><a href="./source/{$news[x].source_id}/{$news[x].source_id|get_source|html_decode|slug}">{$news[x].source_id|get_source}</a></span>
+<span><i class="fa fa-bar-chart"></i> {$news[x].hits}</span>
+</div>
+<!-- Article Excerpt -->
+<p class="hidden-xs">{$news[x].details|html_decode|strip_tags|truncate:150}</p>
+</div>
+</div>
+</li>
+<!-- Start Content Advertisement -->
+{if $smarty.section.x.index eq 3}
+<li>{$content_ad}</li>
+{/if}
+<!-- End Content Advertisement -->
+{/section}
+</ul>
+<div class="clear"></div>
+<!-- Pagination Cade -->
+{$pagi}
+{/if}
+</div>
+</div>
+<div class="col-md-4">
+<!-- Include the SideBar -->
+{include file="sidebar.html"}
+</div>
+</div>
+</div>
+{include file="footer.html"}
+<!-- End Source Page HTML -->

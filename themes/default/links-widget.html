@@ -1,0 +1,12 @@
+<!-- Links Widget -->
+{if $links neq 0}
+<div class="widget links">
+<h4>Links</h4>
+<ul>
+{section name=x loop=$links}
+<li>
+<a href="{$links[x].link}" target="{$links[x].target}" {if $links[x].nofollow eq 1}rel="nofollow"{/if}><i class="fa fa-link"></i>{$links[x].title|html_decode}</a></li>
+{/section}
+</ul>
+</div>
+{/if}

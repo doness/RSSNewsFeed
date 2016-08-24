@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteRule ^category/(.*)/(.*)$ category.php?id=$1&slug=$2
+RewriteRule ^source/(.*)/(.*)$ source.php?id=$1&slug=$2
+RewriteRule ^news/(.*)/(.*)$ news.php?id=$1&slug=$2
+RewriteRule ^page/(.*)/(.*)$ page.php?id=$1&slug=$2
+RewriteRule ^search/(.*)$ search.php?q=$1
+RewriteRule ^not-found$ notfound.php
+RewriteRule ^rss.xml$ rss.php
+RewriteRule ^sitemap-(.*).xml$ sitemap.php?id=$1
+RewriteRule ^categories-sitemap.xml$ categories-sitemap.php
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
