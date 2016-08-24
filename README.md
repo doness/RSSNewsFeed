@@ -30,3 +30,22 @@ Supported
 	<li><code>TechinAsia</code></li>
 	<li><code>more....</code></li>
 </ul>
+
+Requirements
+============
+<ul>
+	<li>PHP 5.2 or higher</li>
+	<li>MySQLi Support</li>
+	<li>CURL Library</li>
+	<li>multibyte functions mb_ functions</li>
+</ul>
+
+Setup CronJob
+=============
+<ol>
+	<li>Cronjob login to your cpanel.</li>
+	<li>Select the period from common setting for example (Twice Per Day) which means that the cron job will work two times every day.
+Then Insert the Command that is responsible for Importing news from feed sources.</li>
+	<li><code>php -q /home/YOUR-ACCOUNT/cron.php</code></li>
+	<li>Finish</li>
+</ol>
