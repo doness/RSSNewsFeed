@@ -2,7 +2,7 @@ RSSNewsFeed
 ===========
 
 <p>
-	<a href="/RSSNewsFeed/blob/master/UNLICENSE">
+	<a href="https://github.com/doness/RSSNewsFeed/blob/master/UNLICENSE">
 		<img src="https://camo.githubusercontent.com/5951551724a202929aa49ea19d5f6a1723ed63c4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d554e4c4943454e53452d626c75652e737667" alt="LICENSE" data-canonical-src="https://img.shields.io/badge/license-UNLICENSE-blue.svg" style="max-width:100%;">
 	</a>
 </p>
